@@ -1,0 +1,53 @@
+body{
+   
+}
+#game{
+    text-align: center;
+    font-family: sans-serif;
+    width: 100%;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    size: 100%;
+    
+    
+}
+#header{
+    color:  turquoise;
+    margin: auto;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(22, 112, 82);
+    text-align: center;
+    font-size: xx-large;
+    font-style: oblique;
+    font-family: sans-serif;
+    
+}
+.col{
+  
+    font-size: 2vw;
+    height: 10vw;
+    background-color: rgb(26, 134, 124);
+    margin: 1vw;
+    color: rgb(39, 33, 88);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    
+}
+.grid{
+    padding-left: 20vw;
+    padding-right: 20vw;
+    
+    margin-top: 2vw;
+}
+.col:hover{
+    background: rgba(131, 141, 138, 0.671);
+    cursor: pointer;
+}
