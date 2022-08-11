@@ -1,3 +1,34 @@
-<app-server></app-server>
-<app-server></app-server>
+<label>Server Name</label>
+
+<input
+type="text"
+class="form-control"
+[(ngModel)]="serverName"
+placeholder="enter server name">
+<br>
+<br>
+
+
+
+<button class ="btn btn-primary" [disabled] = "!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<br>
+<br>
+<p *ngIf="serverCreated">Server was created, Server name is {{serverName}}</p>
+
+
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<br>
+
+<input
+type="text"
+class="form-control"
+placeholder="enter username"
+[(ngModel)]= "userName">
+
+<p>{{userName}}</p>
+<button class ="btn btn-primary" [disabled] = "userName === '' " (click)= "userName=''">Reset</button>
+<br>
+<br>
+<app-server *ngFor="let server of servers"></app-server>
+<hr>
 

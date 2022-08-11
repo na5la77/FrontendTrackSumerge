@@ -4,10 +4,22 @@
   <div class="row">
     <div class="col-sm-12">
       <h2>App Component</h2>
+      <button class="btn btn-secondary" (click) = "onToggleDetails()"> Display Details </button>
+      <p *ngIf="showSecret">Secret password = '23324234'</p>
+      <p
+        *ngFor="let logItem of log"
+        [ngStyle]= "{'background-color': logItem >=5 ? 'blue' : 'white'}"
+        [ngClass]="{'white-text': logItem >=5}"
+        >{{logItem}}</p>
       <hr>
       <app-success-alert></app-success-alert>
+      <hr>
+      <app-servers></app-servers>
+
+
     </div>
   </div>
-</div>
+</div>  
+
 
 

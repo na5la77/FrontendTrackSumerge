@@ -1,1 +1,4 @@
-<span>  I am Using my new component</span>
+<p
+  [ngStyle]="{'background-color': getColor()}"
+  [ngClass]="{online: serverStatus === 'online'}">
+   Server with ID {{serverId}}  is  {{getServerStatus()}}   </p>
