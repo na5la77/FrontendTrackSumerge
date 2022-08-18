@@ -1,1 +1,83 @@
-<p>login works!</p>
+<body>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-6 loginForm">
+      <h2 class= "text-nowrap text-monospace">Welcome to</h2>
+      <h1 class="text-wrap">Films Unchained</h1>
+      <br>
+      <br>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-label for="email">Email</mat-label>
+            <input matInput type="email" id="email" formControlName="email" />
+          </mat-form-field>
+          <span
+            *ngIf="
+              !signUpForm.get('email')?.valid &&
+              signUpForm.get('email')?.touched
+            "
+            class="help-block"
+            >Please Enter a valid email!</span
+          >
+
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                id="password"
+                formControlName="password"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                type="button"
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+                class="visible"
+              >
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+
+              </button>
+
+            </mat-form-field>
+            <span
+            *ngIf="
+              !signUpForm.get('password')?.valid &&
+              signUpForm.get('password')?.touched
+            "
+            class="help-block"
+            >Please enter your password!</span
+          >
+          </div>
+          <br />
+
+
+
+          <button
+            class="btn btn-primary btn-lg btn-block"
+            type="submit"
+            matRipple
+            [matRippleColor]= "'rgba(181, 255, 225,0.5)'">
+            Login
+          </button>
+
+        </form>
+        <br>
+
+        <span
+            *ngIf= "enterCredentials && !(!signUpForm.get('email')?.valid &&
+            signUpForm.get('email')?.touched) && !(!signUpForm.get('password')?.valid &&
+            signUpForm.get('password')?.touched)"
+            class="help-block"
+            >Please enter correct credentials</span
+          >
+      </div>
+    </div>
+  </div>
+</body>

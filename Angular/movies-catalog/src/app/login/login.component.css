@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600|Oxygen:700");
+body{
+  background-image: url("../image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;}
+
+span
+{
+  margin-top: -1vw;
+  color:  tomato;
+
+}
+mat-form-field{
+  min-width: max-content;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
+.loginForm{
+
+  position: absolute;
+  top:10%;
+  left:1%;
+
+  width:25vw;
+
+}
+
+
+.btn{
+  background-color:#CC2936;
+}
+.visible{
+  background-color: transparent;
+  border: 0;
+}
+h1{
+  font-family: "Oxygen";
+  font-size: 440%;
+  color: #CC2936;
+  padding-left: 12vw;
+
+
+}
+h2{
+  font-family: "Futura,Trebuchet MS,Arial,sans-serif";
+  font-size: 350%;
+  padding-bottom: 0vw;
+  color: #CC2936;
+
+
+
+}
+
+

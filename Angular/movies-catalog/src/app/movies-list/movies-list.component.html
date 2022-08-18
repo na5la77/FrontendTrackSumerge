@@ -1,1 +1,14 @@
-<p>movies-list works!</p>
+
+
+
+<div class="card" *ngFor="let movie of topMoviesList" >
+  <mat-card-title-group> Top Rated movies
+  <mat-card tabindex="0" class="movie-card">
+    <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path">
+
+    <mat-card-title>{{movie.title}}</mat-card-title>
+    <mat-card-footer>Rating: {{movie.vote_average}}</mat-card-footer>
+  </mat-card>
+</mat-card-title-group>
+ </div>
+
