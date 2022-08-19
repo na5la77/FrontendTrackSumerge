@@ -1,20 +1,64 @@
+#all {
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 1) 0%,
+    rgba(31, 35, 36, 1) 100%
+  );
+}
 .movie-card {
-  background-size: contain;
-  background-repeat: no-repeat;
-  width:100%;
-  max-width: 800px;
-  height: 100%;
-  min-height: 300px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.9026961126247374) 9%,
+    rgba(41, 49, 51, 0.919502835313813) 26%,
+    rgba(212, 169, 79, 0.8858893899356618) 51%,
+    rgba(196, 156, 72, 0.7682423311121324) 70%,
+    rgba(76, 88, 150, 0.8914916308320203) 88%
+  );
+  width: 100%;
+  max-width: 50%;
+  height: auto;
   display: block;
-  margin: 8vh auto;
-  border-radius: 8px;
-  box-shadow: 0px 8px 12px 0px rgba(0,0,0,0.25);
+  margin: 7% auto;
+  border-radius: 1vw;
+  box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.25);
   position: relative;
+
   @media screen and (max-width: 800px) {
     width: 95%;
     max-width: 95%;
-  }}
-  img{
-    height: auto;
-    width: fit-content;
   }
+}
+img {
+  height: auto;
+  width: 65%;
+  margin-bottom: -1vw;
+  opacity: 80%;
+}
+.MovieText {
+  text-align: left;
+  position: absolute;
+  top: 40%;
+  right: 80%;
+}
+.details:hover {
+  transform: scale(1.15);
+  box-shadow: 0px 0px 80px -25px #c6ccca;
+  transition: all 0.4s;
+}
+mat-paginator {
+  /* background-color: #293133; */
+  /* background-position: center;
+  background-size: cover;
+  background-repeat: space; */
+
+  color-scheme: var("#FDFFFF", "#C49C48");
+  color: azure;
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 1) 0%,
+    rgba(66, 74, 77, 1) 100%
+  );
+}

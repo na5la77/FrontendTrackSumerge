@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600|Oxygen:700");
 body{
-  background-image: url("../image.jpg");
+  background-image: url("../login.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -31,7 +31,7 @@ mat-form-field{
 
 
 .btn{
-  background-color:#CC2936;
+  background-color:#6378df;
 }
 .visible{
   background-color: transparent;
@@ -39,17 +39,17 @@ mat-form-field{
 }
 h1{
   font-family: "Oxygen";
-  font-size: 440%;
-  color: #CC2936;
+  font-size: 370%;
+  color: #293133;
   padding-left: 12vw;
 
 
 }
 h2{
-  font-family: "Futura,Trebuchet MS,Arial,sans-serif";
-  font-size: 350%;
+  font-family: "Oxygen";
+  font-size: 290%;
   padding-bottom: 0vw;
-  color: #CC2936;
+  color: #000000;
 
 
 

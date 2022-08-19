@@ -17,12 +17,15 @@ import { MatRippleModule } from '@angular/material/core';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersService } from './users.service';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
 
   {path: 'login', component: LoginComponent},
-  {path: 'catalog', component: MoviesListComponent},
+  {path: 'catalog', component: MoviesListComponent, children: [
+    {path: ':id', component: MovieComponent }
+  ]
+},
 
 ]
 @NgModule({
@@ -44,7 +47,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatCardModule,
     RouterModule.forRoot(appRoutes),
-    MatRippleModule
+    MatRippleModule,
+    MatPaginatorModule
+
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}},

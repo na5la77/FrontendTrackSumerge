@@ -1,14 +1,41 @@
+<div class="row" id="all">
+  <div class="col-xs-12">
+    <div class="paginator">
+      <div
+        class="card"
+        *ngFor="let movie of movieSlice; let i = index"
+        tabindex="0"
+      >
+        <mat-card class="movie-card details" (click)="onClick(i)">
+          <div class="row">
+            <div class="col-xs-6">
+              <img
+                mat-card-image
+                [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+              />
+            </div>
+            <div class="col-xs-6">
+              <mat-card-title>{{ movie.title }}</mat-card-title>
 
+              <mat-card-content>{{ movie.overview }}</mat-card-content>
+              <mat-card-footer
+                >Rating: {{ movie.vote_average }}</mat-card-footer
+              >
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <mat-paginator
+        [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page"
+        (page)="onPageChange($event)"
+        showFirstLastButtons
+        
 
+      ></mat-paginator>
 
-<div class="card" *ngFor="let movie of topMoviesList" >
-  <mat-card-title-group> Top Rated movies
-  <mat-card tabindex="0" class="movie-card">
-    <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path">
-
-    <mat-card-title>{{movie.title}}</mat-card-title>
-    <mat-card-footer>Rating: {{movie.vote_average}}</mat-card-footer>
-  </mat-card>
-</mat-card-title-group>
- </div>
-
+    </div>
+  </div>
+</div>
