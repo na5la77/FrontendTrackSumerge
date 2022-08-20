@@ -1,0 +1,28 @@
+<body>
+<div class="movie-card">
+  <div class="container">
+    <img
+      [src]="'https://image.tmdb.org/t/p/w500' + poster_path"
+
+    />
+
+    <div class="hero" [ngStyle]="{'background-image': backdrop_path, 'background-size': 'cover', 'background-repeat': 'no-repeat', 'opacity': '75%'  }" >
+      <div class="details">
+        <div class="title1" >Title: {{title}}</div>
+        <span class="title2" *ngIf="tagline !== ''"> "  {{tagline}}"</span>
+      </div>
+    </div>
+
+    <div class="description">
+      <div class="column1"></div>
+
+      <div class="column2">
+        <p>
+          {{overview}}
+
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
