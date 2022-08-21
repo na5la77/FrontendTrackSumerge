@@ -18,17 +18,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatRippleModule } from '@angular/material/core';
 
-
 import { UsersService } from './users.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { AppRoutingModule } from './app-routing.module';
+import { MatButtonModule } from '@angular/material/button';
+import { AuthGuardGuard } from './auth-guard.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MoviesListComponent,
-    MovieComponent
+    MovieComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +43,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     MatRippleModule,
     MatPaginatorModule,
+    MatButtonModule,
   ],
   providers: [
     {
@@ -49,6 +51,7 @@ import { AppRoutingModule } from './app-routing.module';
       useValue: { appearance: 'fill' },
     },
     UsersService,
+    AuthGuardGuard,
   ],
   bootstrap: [AppComponent],
 })

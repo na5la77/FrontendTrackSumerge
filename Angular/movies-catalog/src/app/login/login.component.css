@@ -1,59 +1,67 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600|Oxygen:700");
-body{
+
+@font-face {
+  font-family: myFirstFont;
+  src: url('../Quinlliyk.ttf');
+}
+body {
   background-image: url("../login.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  overflow: hidden;}
-
-span
-{
-  margin-top: -1vw;
-  color:  rgb(241, 48, 14);
-  font-size: medium;
-
+  overflow: hidden;
 }
-mat-form-field{
+
+span {
+  margin-top: -1vw;
+  color: rgb(241, 48, 14);
+  font-size: medium;
+}
+mat-form-field {
   min-width: max-content;
   width: 100%;
   align-items: center;
   justify-content: center;
-
 }
-.loginForm{
-
+.loginForm {
   position: absolute;
-  top:10%;
-  left:1%;
+  top: 10%;
+  left: 1%;
 
-  width:25vw;
-
+  width: 25vw;
 }
 
-
-.btn{
-  background-color:rgba(76, 88, 150, 1);
+.btn {
+  background-color: rgba(76, 88, 150, 1);
 }
 
-.visible{
+.visible {
   background-color: transparent;
   border: 0;
 }
-h1{
+
+h2 {
   font-family: "Oxygen";
-  font-size: 370%;
-  color: #293133;
-  padding-left: 12vw;
+  font-size: 400%;
+  padding-bottom: 0vw;
+  color: #000000;
+}
+.films{
+  font-family: "myFirstFont";
+  font-size: 600%;
+  color: #2a6371c5;
+  padding-left: 1vw;
+  margin-bottom: 3vw;
+
 
 
 }
-h2{
-  font-family: "Oxygen";
-  font-size: 290%;
-  padding-bottom: 0vw;
-  color: #000000;
-
-
+.unchained{
+  font-family: "myFirstFont";
+  font-size: 600%;
+  color: #2a6371c5;
+  padding-left: 3vw;
+  margin-bottom: 1vw;
 
 }
 

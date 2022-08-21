@@ -1,12 +1,13 @@
 <body>
   <div class="container">
     <div class="row">
-
       <div class="col-xs-6 loginForm">
-      <h2 class= "text-nowrap text-monospace">Welcome to</h2>
-      <h1 class="text-wrap">Films Unchained</h1>
-      <br>
-      <br>
+        <!-- <h2 class="text-nowrap text-monospace">Welcome to</h2> -->
+        <h1 class="films">Films</h1>
+        <h1 class="unchained">Unchained</h1>
+
+        <br />
+        <br />
         <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
           <mat-form-field appearance="fill">
             <mat-label for="email">Email</mat-label>
@@ -42,41 +43,45 @@
                 <mat-icon>{{
                   hide ? "visibility_off" : "visibility"
                 }}</mat-icon>
-
               </button>
-
             </mat-form-field>
             <span
-            *ngIf="
-              !signUpForm.get('password')?.valid &&
-              signUpForm.get('password')?.touched
-            "
-            class="help-block"
-            >Please enter your password!</span
-          >
+              *ngIf="
+                !signUpForm.get('password')?.valid &&
+                signUpForm.get('password')?.touched
+              "
+              class="help-block"
+              >Please enter your password!</span
+            >
           </div>
           <br />
-
-
 
           <button
             class="btn btn-primary btn-lg btn-block"
             type="submit"
             matRipple
-            [matRippleColor]= "'rgba(181, 255, 225,0.5)'">
+            [matRippleColor]="'rgba(181, 255, 225,0.5)'"
+          >
             Login
           </button>
-
         </form>
-        <br>
+        <br />
 
         <span
-            *ngIf= "enterCredentials && !(!signUpForm.get('email')?.valid &&
-            signUpForm.get('email')?.touched) && !(!signUpForm.get('password')?.valid &&
-            signUpForm.get('password')?.touched)"
-            class="help-block"
-            >Please enter correct credentials</span
-          >
+          *ngIf="
+            enterCredentials &&
+            !(
+              !signUpForm.get('email')?.valid &&
+              signUpForm.get('email')?.touched
+            ) &&
+            !(
+              !signUpForm.get('password')?.valid &&
+              signUpForm.get('password')?.touched
+            )
+          "
+          class="help-block"
+          >Please enter correct credentials</span
+        >
       </div>
     </div>
   </div>

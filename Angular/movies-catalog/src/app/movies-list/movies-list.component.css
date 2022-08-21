@@ -1,12 +1,9 @@
-
-.all{
+.all {
   background: rgb(17, 17, 17);
   background: linear-gradient(
     0deg,
     rgba(17, 17, 17, 1) 0%,
     rgba(31, 35, 36, 1) 100%
-
-
   );
   background-position: center;
 
@@ -32,7 +29,7 @@
   box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.25);
   position: relative;
 
-  @media screen  {
+  @media screen {
     width: 100%;
     overflow-x: hidden!;
     max-width: 95%;
@@ -72,4 +69,17 @@ mat-paginator {
     rgba(17, 17, 17, 1) 0%,
     rgba(66, 74, 77, 1) 100%
   );
+}
+button {
+  margin-top: 1vw;
+  margin-left: 1vw;
+
+  position: fixed;
+  opacity: 50%;
+  background-color: #ff2020;
+}
+button:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 80px -25px #edf2f0;
+  transition: all 0.4s;
 }

@@ -7,7 +7,4 @@ export class MovieModel {
   backdrop_path: string;
   vote_count: number;
   id: number;
-
-
-
 }
