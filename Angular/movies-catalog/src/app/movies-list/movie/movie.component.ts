@@ -22,6 +22,10 @@ export class MovieComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    const headers = {'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbmFraGxhQHN1bWVyZ2UuY29tIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9sb2dpbiIsImV4cCI6MTY2MzI0MjA2OH0.qCDVz2ejjMZCgdSXuEbck3E9vajyCbSgmhVoMz4lVnA'}
     this.http
       .get<{
         title: string;
@@ -32,9 +36,9 @@ export class MovieComponent implements OnInit {
         backdrop_path: string;
         poster_path: string;
       }>(
-        'https://api.themoviedb.org/3/movie/' +
-          this.route.snapshot.params['id'] +
-          '?api_key=e0c76c6785a54d1aaac26ae0b841957d&language=en-US'
+        'http://localhost:8080/movies/' +
+          this.route.snapshot.params['id'],{'headers':headers}
+
       )
       .subscribe((responseData) => {
         this.overview = responseData.overview;
@@ -42,13 +46,14 @@ export class MovieComponent implements OnInit {
         this.tagline = responseData.tagline;
         this.vote_count = responseData.vote_count;
         this.vote_average = responseData.vote_average;
-        this.backdrop_path =
-          'url(https://image.tmdb.org/t/p/w500' +
-          responseData.backdrop_path +
-          ')';
+        this.backdrop_path ='url(' +
+        responseData.backdrop_path +
+        ')'; ;
         this.poster_path = responseData.poster_path;
+        console.log(this.backdrop_path);
 
-        console.log(this.overview);
+
+
       });
   }
   onBack() {

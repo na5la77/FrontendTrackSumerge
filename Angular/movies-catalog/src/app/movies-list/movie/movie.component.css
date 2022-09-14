@@ -6,6 +6,17 @@
 *:after {
   box-sizing: border-box;
 }
+body{
+  background: linear-gradient(
+    321deg,
+    rgba(0, 0, 0, 0.9026961126247374) 0%,
+    rgba(212, 169, 79, 0.9192051820728291) 40%,
+    rgba(76, 88, 150, 0.8211659663865546) 56%
+  );
+  background-position: center;
+  overflow: auto;
+
+}
 
 img {
   height: auto;
@@ -22,15 +33,8 @@ img {
   color: #a9a8a3;
   padding: 4vw 0;
   float: center;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    321deg,
-    rgba(0, 0, 0, 0.9026961126247374) 0%,
-    rgba(212, 169, 79, 0.9192051820728291) 40%,
-    rgba(76, 88, 150, 0.8211659663865546) 56%
-  );
-  background-size: 100%;
-  background-position: center;
+
+
 }
 .container {
   margin: 0 auto;
@@ -44,7 +48,6 @@ img {
     rgba(17, 17, 17, 1) 0%,
     rgba(66, 74, 77, 1) 100%
   );
-
 }
 .hero {
   height: 25vw;
@@ -121,6 +124,6 @@ img {
 }
 button {
   background-color: #000000;
-  margin-left:1vw ;
+  margin-left: 1vw;
   margin-top: 1vw;
 }

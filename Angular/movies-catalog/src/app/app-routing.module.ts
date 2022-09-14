@@ -6,8 +6,6 @@ import { MovieComponent } from './movies-list/movie/movie.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 
 const appRoutes: Routes = [
-
-
   {
     path: 'catalog',
     component: MoviesListComponent,
@@ -18,7 +16,7 @@ const appRoutes: Routes = [
     component: MovieComponent,
     canActivate: [AuthGuardGuard],
   },
-  { path: '', component: LoginComponent, pathMatch:'full'},
+  { path: '', component: LoginComponent, pathMatch: 'full' },
   { path: '**', redirectTo: '' },
 ];
 @NgModule({

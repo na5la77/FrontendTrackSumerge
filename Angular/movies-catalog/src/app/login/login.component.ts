@@ -1,3 +1,4 @@
+import { HttpClient, HttpHandler, HttpHeaders, HttpParams, HttpRequest, HttpResponse, HttpResponseBase } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,33 +19,71 @@ export class LoginComponent implements OnInit {
   flagVerified: boolean = false;
   enterCredentials: boolean = false;
 
+
   ngOnInit() {
-    localStorage.setItem('loggedIn', "false")
+    localStorage.setItem('loggedIn', 'false');
     this.signUpForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, Validators.required),
     });
     this.users = this.usersService.getUsers();
   }
-  constructor(private router: Router, private usersService: UsersService) {}
+  constructor(private router: Router, private http: HttpClient,private usersService: UsersService) {}
 
-  onSubmit() {
+  async onSubmit() {
+    sessionStorage.removeItem('access_token');
     this.enterCredentials = false;
     this.email = this.signUpForm.value.email;
     this.password = this.signUpForm.value.password;
 
-    for (let i = 0; i < this.users.length; i++) {
-      if (
-        this.email === this.users[i].email &&
-        this.password === this.users[i].password
-      ) {
-        this.flagVerified = true;
 
-        break;
-      }
-    }
 
-    if (this.signUpForm.status == 'VALID' && this.flagVerified) {
+      const params2 = new HttpParams({
+        fromObject: {
+          grant_type: 'password',
+          username: this.email,
+          password: this.password,
+
+        }
+      });
+
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        })
+      };
+
+
+
+
+
+     // const headers = { 'content-type': 'application/json'}
+
+      await new Promise<void> (resolve =>{
+        this.http.post('http://localhost:8080/login', params2, httpOptions).subscribe(
+      (res: any) => {
+        console.log(new HttpResponse().status);
+        sessionStorage.setItem('access_token', res.access_token);
+        console.log(sessionStorage.getItem('access_token'));
+        resolve();
+
+      },
+
+
+    );
+
+      })
+
+console.log(sessionStorage.getItem('access_token'))
+
+
+
+
+
+
+
+
+    if (this.signUpForm.status == 'VALID' && sessionStorage.getItem('access_token')!==null) {
       this.usersService.login();
       this.router.navigate(['/catalog']);
 
@@ -54,4 +93,40 @@ export class LoginComponent implements OnInit {
       this.usersService.logout();
     }
   }
-}
+
+  getPosts() {
+      const params2 = new HttpParams({
+        fromObject: {
+          grant_type: 'password',
+          username: this.email,
+          password: this.password,
+
+        }
+      });
+
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        })
+      };
+
+      this.http.post('http://localhost:8080/login', params2, httpOptions).subscribe(
+      (res: any) => {
+        console.log(new HttpResponse().status);
+        sessionStorage.setItem('access_token', res.access_token);
+        console.log(sessionStorage.getItem('access_token'));
+
+
+      },
+
+
+    );
+
+
+
+
+
+
+
+
+}}

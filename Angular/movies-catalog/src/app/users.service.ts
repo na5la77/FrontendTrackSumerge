@@ -17,6 +17,10 @@ export class UsersService {
   logout() {
     this.loggedIn = false;
     localStorage.removeItem('loggedIn');
+    sessionStorage.removeItem('access_token');
+    sessionStorage.removeItem('refresh_token');
+
+
   }
 
   getUsers() {

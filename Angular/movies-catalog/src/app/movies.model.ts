@@ -1,4 +1,5 @@
 export class MovieModel {
+  movieId: number;
   title: string;
   poster_path: string;
   overview: string;
