@@ -25,7 +25,7 @@ export class MovieComponent implements OnInit {
     const headers = {'Content-Type': 'application/json',
     'Accept': 'application/json',
     'Access-Control-Allow-Headers': 'Content-Type',
-    'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbmFraGxhQHN1bWVyZ2UuY29tIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9sb2dpbiIsImV4cCI6MTY2MzI0MjA2OH0.qCDVz2ejjMZCgdSXuEbck3E9vajyCbSgmhVoMz4lVnA'}
+    'Authorization': 'Bearer ' + sessionStorage.getItem('access_token')}
     this.http
       .get<{
         title: string;

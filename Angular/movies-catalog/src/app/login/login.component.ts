@@ -47,20 +47,17 @@ export class LoginComponent implements OnInit {
         }
       });
 
+
+
+
       const httpOptions = {
         headers: new HttpHeaders({
           'Content-Type': 'application/x-www-form-urlencoded',
         })
       };
 
-
-
-
-
-     // const headers = { 'content-type': 'application/json'}
-
       await new Promise<void> (resolve =>{
-        this.http.post('http://localhost:8080/login', params2, httpOptions).subscribe(
+        this.http.post('c', params2, httpOptions).subscribe(
       (res: any) => {
         console.log(new HttpResponse().status);
         sessionStorage.setItem('access_token', res.access_token);
@@ -82,7 +79,6 @@ console.log(sessionStorage.getItem('access_token'))
 
 
 
-
     if (this.signUpForm.status == 'VALID' && sessionStorage.getItem('access_token')!==null) {
       this.usersService.login();
       this.router.navigate(['/catalog']);
@@ -92,41 +88,9 @@ console.log(sessionStorage.getItem('access_token'))
       this.enterCredentials = true;
       this.usersService.logout();
     }
+
+
   }
 
-  getPosts() {
-      const params2 = new HttpParams({
-        fromObject: {
-          grant_type: 'password',
-          username: this.email,
-          password: this.password,
 
-        }
-      });
-
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/x-www-form-urlencoded',
-        })
-      };
-
-      this.http.post('http://localhost:8080/login', params2, httpOptions).subscribe(
-      (res: any) => {
-        console.log(new HttpResponse().status);
-        sessionStorage.setItem('access_token', res.access_token);
-        console.log(sessionStorage.getItem('access_token'));
-
-
-      },
-
-
-    );
-
-
-
-
-
-
-
-
-}}
+}
